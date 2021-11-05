@@ -13,9 +13,9 @@
   integrity sha512-v9c/iFz17jRWyd2cRnrvJg4VOg/4I/VCk+bG8JnoX2gJ9sAesPzo3uTqcmlVXdpasTI8hChpBVw00pghKe3qTQ==
 
 "@kenjiuno/msgreader@^1.12.0-alpha.2":
-  version "1.12.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.12.0-alpha.3.tgz#bf5613e4b7288687e065924b18fd306a4135bd85"
-  integrity sha512-ELJJ7WUV0PXDHWVmDKshN3XM3t7tV4IMw4cyFGWGvMGPxKw2lHSEBGV43OYYXtto9zieMv293uaH95vEzjaRuA==
+  version "1.12.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.12.0-alpha.4.tgz#deac5aabf03467b383d25d84c09d653abfd61366"
+  integrity sha512-KkXbQHyTFRSNt9qFJgjCk2UhiRyfVjNuzwZIRkkW+d8QKHCwVGu1A4P6H1ix5t/8/KVjwWFfl3oSc6dxdEnQ5g==
   dependencies:
     "@kenjiuno/decompressrtf" "^0.1.3"
     iconv-lite "^0.6.3"
