@@ -5,6 +5,7 @@ import 'jsoneditor/dist/jsoneditor.min.css';
 const JSONEditor = require('jsoneditor');
 const { decompressRTF } = require('@kenjiuno/decompressrtf');
 const { Buffer } = require('buffer');
+import * as rxjs from 'rxjs';
 
 {
     const { version } = require('@kenjiuno/msgreader/package.json');
@@ -24,7 +25,7 @@ const options = {};
 const editor = new JSONEditor(container, options);
 
 function recoverCompressedRtf(msg) {
-    const attachments = msg.attachments.map(
+    const attachments = msg.attachments ? msg.attachments.map(
         sub => {
             const newSub = Object.assign({}, sub);
             if (newSub.innerMsgContentFields) {
@@ -32,33 +33,112 @@ function recoverCompressedRtf(msg) {
             }
             return newSub;
         }
-    );
+    ) : undefined;
 
     const newMsg = Object.assign({}, msg);
     if (newMsg.compressedRtf !== undefined) {
         newMsg.rtf = Buffer.from(decompressRTF(newMsg.compressedRtf)).toString("ascii");
         delete newMsg.compressedRtf;
     }
-    newMsg.attachments = attachments;
+    if (attachments !== undefined) {
+        newMsg.attachments = attachments;
+    }
     return newMsg;
 }
 
-document
-    .querySelector("#msgFile")
-    .addEventListener("change", (event) => {
-        const fileList = event.target.files;
-        for (let file of fileList) {
-            const reader = new FileReader();
-            reader.addEventListener('load', (event) => {
-                const arrayBuffer = event.target.result;
+const wip = document.getElementById('wip');
+const errorPanel = document.getElementById('errorPanel');
 
-                const testMsg = new MsgReader(arrayBuffer);
-                const testMsgInfo = testMsg.getFileData();
+rxjs.combineLatest([
+    // #msgFile
+    rxjs.fromEvent(
+        document.getElementById("msgFile"),
+        'change'
+    )
+        .pipe(
+            rxjs.map(
+                e => e.target.files
+            )
+        ),
+    // #ansiEncoding
+    rxjs.fromEvent(
+        document.getElementById("ansiEncoding"),
+        'change'
+    )
+        .pipe(
+            rxjs.map(
+                e => e.target.value
+            ),
+            rxjs.startWith(null)
+        ),
+    // #includeRawProps
+    rxjs.fromEvent(
+        document.getElementById("includeRawProps"),
+        'change'
+    )
+        .pipe(
+            rxjs.map(
+                e => e.target.checked
+            ),
+            rxjs.startWith(false)
+        ),
+])
+    .subscribe(
+        set => {
+            const [fileList, ansiEncoding, includeRawProps] = set;
 
-                console.info(testMsgInfo);
-                editor.set(recoverCompressedRtf(testMsgInfo));
-            });
-            reader.readAsArrayBuffer(file);
-            break;
+            rxjs
+                .from(fileList)
+                .pipe(
+                    rxjs.take(1)
+                )
+                .subscribe(
+                    file => {
+                        const reader = new FileReader();
+
+                        wip.style.display = '';
+                        errorPanel.style.display = 'none';
+
+                        rxjs.fromEvent(
+                            reader,
+                            'load'
+                        )
+                            .pipe(
+                                rxjs.take(1),
+                                rxjs.map(
+                                    e => e.target.result
+                                ),
+                                rxjs.finalize(
+                                    () => wip.style.display = 'none'
+                                ),
+                                rxjs.map(
+                                    arrayBuffer => {
+                                        const testMsg = new MsgReader(arrayBuffer);
+                                        testMsg.parserConfig = {
+                                            ansiEncoding,
+                                            includeRawProps,
+                                        }
+
+                                        const testMsgInfo = testMsg.getFileData();
+
+                                        console.info(testMsgInfo);
+
+                                        return recoverCompressedRtf(testMsgInfo);
+                                    }
+                                )
+                            )
+                            .subscribe({
+                                next: msgInfo => {
+                                    editor.set(msgInfo);
+                                },
+                                error: ex => {
+                                    errorPanel.style.display = '';
+                                    errorPanel.textContent = ex + "";
+                                }
+                            });
+
+                        reader.readAsArrayBuffer(file);
+                    }
+                );
         }
-    });
+    );

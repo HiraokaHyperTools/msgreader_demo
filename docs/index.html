@@ -13,8 +13,113 @@
     <!-- Content here -->
     <div class="container">
         <h1 class="my-substitution-target">msgreader_demo (msgreader@{version})</h1>
+        <hr class="my-4">
         <p>Select msg file:</p>
         <p><input type="file" id="msgFile" accept=".msg"></p>
+        <div class="form-group">
+            <label for="ansiEncoding">ansiEncoding</label>
+            <input type="email" class="form-control" id="ansiEncoding" placeholder="cp1251" autocomplete="on"
+                list="ansiEncodingList">
+            <datalist id="ansiEncodingList">
+                <option value="utf8"></option>
+                <option value="ascii"></option>
+                <option value="latin1"></option>
+                <option value="armscii8"></option>
+                <option value="big5hkscs"></option>
+                <option value="cp437"></option>
+                <option value="cp737"></option>
+                <option value="cp775"></option>
+                <option value="cp850"></option>
+                <option value="cp852"></option>
+                <option value="cp855"></option>
+                <option value="cp856"></option>
+                <option value="cp858"></option>
+                <option value="cp860"></option>
+                <option value="cp861"></option>
+                <option value="cp862"></option>
+                <option value="cp863"></option>
+                <option value="cp864"></option>
+                <option value="cp865"></option>
+                <option value="cp866"></option>
+                <option value="cp869"></option>
+                <option value="cp922"></option>
+                <option value="cp936"></option>
+                <option value="cp949"></option>
+                <option value="cp950"></option>
+                <option value="cp1046"></option>
+                <option value="cp1124"></option>
+                <option value="cp1125"></option>
+                <option value="cp1129"></option>
+                <option value="cp1133"></option>
+                <option value="cp1161"></option>
+                <option value="cp1162"></option>
+                <option value="cp1163"></option>
+                <option value="eucjp"></option>
+                <option value="gb18030"></option>
+                <option value="gbk"></option>
+                <option value="georgianacademy"></option>
+                <option value="georgianps"></option>
+                <option value="hproman8"></option>
+                <option value="iso646cn"></option>
+                <option value="iso646jp"></option>
+                <option value="iso88591"></option>
+                <option value="iso88592"></option>
+                <option value="iso88593"></option>
+                <option value="iso88594"></option>
+                <option value="iso88595"></option>
+                <option value="iso88596"></option>
+                <option value="iso88597"></option>
+                <option value="iso88598"></option>
+                <option value="iso88599"></option>
+                <option value="iso885910"></option>
+                <option value="iso885911"></option>
+                <option value="iso885913"></option>
+                <option value="iso885914"></option>
+                <option value="iso885915"></option>
+                <option value="iso885916"></option>
+                <option value="koi8r"></option>
+                <option value="koi8ru"></option>
+                <option value="koi8t"></option>
+                <option value="koi8u"></option>
+                <option value="maccroatian"></option>
+                <option value="maccyrillic"></option>
+                <option value="macgreek"></option>
+                <option value="maciceland"></option>
+                <option value="macintosh"></option>
+                <option value="macroman"></option>
+                <option value="macromania"></option>
+                <option value="macthai"></option>
+                <option value="macturkish"></option>
+                <option value="macukraine"></option>
+                <option value="pt154"></option>
+                <option value="rk1048"></option>
+                <option value="shiftjis"></option>
+                <option value="tcvn"></option>
+                <option value="tis620"></option>
+                <option value="viscii"></option>
+                <option value="windows874"></option>
+                <option value="windows1250"></option>
+                <option value="windows1251"></option>
+                <option value="windows1252"></option>
+                <option value="windows1253"></option>
+                <option value="windows1254"></option>
+                <option value="windows1255"></option>
+                <option value="windows1256"></option>
+                <option value="windows1257"></option>
+                <option value="windows1258"></option>
+            </datalist>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="includeRawProps">
+            <label class="form-check-label" for="includeRawProps">includeRawProps</label>
+        </div>
+        <hr class="my-4">
+        <div class="alert alert-primary" role="alert" id="wip" style="display:none;">
+            Working in progress...
+        </div>
+        <div class="alert alert-warning" role="alert" id="errorPanel" style="display:none;">
+            ERROR
+        </div>
         <p>Parsed JSON structure (Powered by <a href="https://github.com/josdejong/jsoneditor" target="_blank">JSON
                 Editor</a>):</p>
         <div id="editor_holder"></div>
