@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -20,6 +21,11 @@ module.exports = {
             },
         ]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            "BUILT_AT": "'" + new Date().toISOString() + "'",
+        }),
+    ],
     resolve: {
         fallback: {
             buffer: require.resolve("buffer/"),

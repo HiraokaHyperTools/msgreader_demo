@@ -1,3 +1,5 @@
+declare const BUILT_AT: string;
+
 import 'bootstrap';
 import MsgReader from '@kenjiuno/msgreader';
 import { FieldsData } from '@kenjiuno/msgreader/lib/MsgReader';
@@ -11,7 +13,9 @@ import * as rxjs from 'rxjs';
 {
     const { version } = require('@kenjiuno/msgreader/package.json');
     const applyReplace = function (src: string): string {
-        return src.replace(/{version}/g, version);
+        return src
+            .replace(/{version}/g, version)
+            .replace(/{build}/g, BUILT_AT);
     }
     document.title = applyReplace(document.title);
     document.querySelectorAll(".my-substitution-target").forEach(
