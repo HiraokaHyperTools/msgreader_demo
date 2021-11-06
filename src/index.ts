@@ -11,10 +11,10 @@ import { Buffer } from 'buffer';
 import * as rxjs from 'rxjs';
 
 {
-    const { version } = require('@kenjiuno/msgreader/package.json');
+    const { name, version } = require('@kenjiuno/msgreader/package.json');
     const applyReplace = function (src: string): string {
         return src
-            .replace(/{version}/g, version)
+            .replace(/{package}/g, `${name}@${version}`)
             .replace(/{build}/g, BUILT_AT);
     }
     document.title = applyReplace(document.title);
