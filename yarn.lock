@@ -13,9 +13,9 @@
   integrity sha512-v9c/iFz17jRWyd2cRnrvJg4VOg/4I/VCk+bG8JnoX2gJ9sAesPzo3uTqcmlVXdpasTI8hChpBVw00pghKe3qTQ==
 
 "@kenjiuno/msgreader@^1.12.0-alpha.2":
-  version "1.12.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.12.0-alpha.5.tgz#b9a364a0de62547a60320b986c980c1cb21d254d"
-  integrity sha512-uSpzuEa3U3hrfPj9VxueTHCmZ62yW2rP9zNf2p6lZNhoiIytMtuuzCeTijDIB/1b+DF+cZvgCXMuaJxRHQivMg==
+  version "1.12.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.12.0-alpha.6.tgz#eacd1f367225fb212950a2d11afb8891d68e75de"
+  integrity sha512-w6l1GWYpnk8fXpb2x+tMT1h38IVLi/QlyM8U60jaC2BuXoMRCyimXTWt9wrPkrkx+SY6H2/oK1YXMllK6gsQOw==
   dependencies:
     "@kenjiuno/decompressrtf" "^0.1.3"
     iconv-lite "^0.6.3"
@@ -217,7 +217,7 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-ace-builds@^1.4.12:
+ace-builds@^1.4.13:
   version "1.4.13"
   resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.13.tgz#186f42d3849ebcc6a48b93088a058489897514c1"
   integrity sha512-SOLzdaQkY6ecPKYRDDg+MY1WoGgXA34cIvYJNNoBMGGUswHmlauU2Hy0UL96vW0Fs/LgFbMUjD+6vqzWTldIYQ==
@@ -378,9 +378,9 @@ cssesc@^3.0.0:
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
 electron-to-chromium@^1.3.886:
-  version "1.3.889"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.889.tgz#0b7c6f7628559592d5406deda281788f37107790"
-  integrity sha512-suEUoPTD1mExjL9TdmH7cvEiWJVM2oEiAi+Y1p0QKxI2HcRlT44qDTP2c1aZmVwRemIPYOpxmV7CxQCOWcm4XQ==
+  version "1.3.890"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.890.tgz#e7143b659f73dc4d0512d1ae4baeb0fb9e7bc835"
+  integrity sha512-VWlVXSkv0cA/OOehrEyqjUTHwV8YXCPTfPvbtoeU2aHR21vI4Ejh5aC4AxUwOmbLbBgb6Gd3URZahoCxtBqCYQ==
 
 enhanced-resolve@^5.0.0, enhanced-resolve@^5.8.3:
   version "5.8.3"
@@ -621,11 +621,11 @@ json-source-map@^0.6.1:
   integrity sha512-1QoztHPsMQqhDq0hlXY5ZqcEdUzxQEIxgFkKl4WUp2pgShObl+9ovi4kRh2TfvAfxAoHOJ9vIMEqk3k4iex7tg==
 
 jsoneditor@^9.5.6:
-  version "9.5.6"
-  resolved "https://registry.yarnpkg.com/jsoneditor/-/jsoneditor-9.5.6.tgz#b2abca2aeb34bb5291025d0eeddcb2845e0d90a9"
-  integrity sha512-smu4CKCOeJiizGGGYQ7ZAvCclnuJP7gX/wcoHw/DWiJMUZq+3KjJNDhYnVTRgi+Zk0UlPngA4egmuJre/H2mXg==
+  version "9.5.7"
+  resolved "https://registry.yarnpkg.com/jsoneditor/-/jsoneditor-9.5.7.tgz#b74d0c2cf64febe102b1b0a91d693f48d1f90917"
+  integrity sha512-RWI1YqIhb2XzLcnSHMta7LROItQg49FhSd7KNPWr81HyCj2pc0m25no4BpzygmxW9320r9PnYKJwZsqL2PpdrQ==
   dependencies:
-    ace-builds "^1.4.12"
+    ace-builds "^1.4.13"
     ajv "^6.12.6"
     javascript-natural-sort "^0.7.1"
     jmespath "^0.15.0"
@@ -633,7 +633,7 @@ jsoneditor@^9.5.6:
     jsonrepair "^2.2.1"
     mobius1-selectr "^2.4.13"
     picomodal "^3.0.0"
-    vanilla-picker "^2.11.2"
+    vanilla-picker "^2.12.1"
 
 jsonrepair@^2.2.1:
   version "2.2.1"
@@ -1068,7 +1068,7 @@ util-deprecate@^1.0.2:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-vanilla-picker@^2.11.2:
+vanilla-picker@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/vanilla-picker/-/vanilla-picker-2.12.1.tgz#6e619eecf553891b8d2d042b745a23c91f19f34c"
   integrity sha512-2qrEP9VYylKXbyzXKsbu2dferBTvqnlsr29XjHwFE+/MEp0VNj6oEUESLDtKZ7DWzGdSv1x/+ujqFZF+KsO3cg==
@@ -1115,9 +1115,9 @@ webpack-sources@^3.2.0:
   integrity sha512-t6BMVLQ0AkjBOoRTZgqrWm7xbXMBzD+XDq2EZ96+vMfn3qKgsvdXZhbPZ4ElUOpdv4u+iiGe+w3+J75iy/bYGA==
 
 webpack@^5.61.0:
-  version "5.61.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.61.0.tgz#fa827f0ee9bdfd141dd73c3e891e955ebd52fe7f"
-  integrity sha512-fPdTuaYZ/GMGFm4WrPi2KRCqS1vDp773kj9S0iI5Uc//5cszsFEDgHNaX4Rj1vobUiU1dFIV3mA9k1eHeluFpw==
+  version "5.62.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.62.1.tgz#06f09b56a7b1bb13ed5137ad4b118358a90c9505"
+  integrity sha512-jNLtnWChS2CMZ7vqWtztv0G6fYB5hz11Zsadp5tE7e4/66zVDj7/KUeQZOsOl8Hz5KrLJH1h2eIDl6AnlyE12Q==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
