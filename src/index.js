@@ -48,6 +48,12 @@ function recoverCompressedRtf(msg) {
 
 const wip = document.getElementById('wip');
 const errorPanel = document.getElementById('errorPanel');
+const clearAnsiEncoding = document.getElementById('clearAnsiEncoding');
+
+clearAnsiEncoding.addEventListener('click', function () {
+    document.getElementById("ansiEncoding").value = "";
+    document.getElementById("ansiEncoding").dispatchEvent(new Event("change"));
+});
 
 rxjs.combineLatest([
     // #msgFile

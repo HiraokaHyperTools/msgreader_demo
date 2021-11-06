@@ -18,8 +18,13 @@
         <p><input type="file" id="msgFile" accept=".msg"></p>
         <div class="form-group">
             <label for="ansiEncoding">ansiEncoding</label>
-            <input class="form-control" id="ansiEncoding" placeholder="cp1251" autocomplete="on"
-                list="ansiEncodingList">
+            <div class="input-group" style="max-width:20em;">
+                <input class="form-control" id="ansiEncoding" placeholder="e.g. cp1251" autocomplete="on"
+                    list="ansiEncodingList">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="clearAnsiEncoding">Clear</button>
+                </div>
+            </div>
             <datalist id="ansiEncodingList">
                 <option value="utf8"></option>
                 <option value="ascii"></option>
