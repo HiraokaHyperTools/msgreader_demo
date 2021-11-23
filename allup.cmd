@@ -1,1 +1,1 @@
-yarn install && yarn u && pause && pause && node up.js
+yarn add -D "@kenjiuno/msgreader@latest" && yarn build && pause && pause && node up.js
