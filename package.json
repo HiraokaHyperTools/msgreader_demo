@@ -7,7 +7,7 @@
   "private": true,
   "devDependencies": {
     "@kenjiuno/decompressrtf": "^0.1.4",
-    "@kenjiuno/msgreader": "^1.16.0",
+    "@kenjiuno/msgreader": "^1.17.0-alpha.3",
     "@popperjs/core": "^2.11.6",
     "@types/jsoneditor": "^9.9.0",
     "bootstrap": "5.2.3",
