@@ -52,10 +52,10 @@
   resolved "https://registry.yarnpkg.com/@kenjiuno/decompressrtf/-/decompressrtf-0.1.4.tgz#17b123616a4549203a64ce5bc58b40494b796e30"
   integrity sha512-v9c/iFz17jRWyd2cRnrvJg4VOg/4I/VCk+bG8JnoX2gJ9sAesPzo3uTqcmlVXdpasTI8hChpBVw00pghKe3qTQ==
 
-"@kenjiuno/msgreader@^1.21.0-alpha1":
-  version "1.21.0-alpha1"
-  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.21.0-alpha1.tgz#94984832402f2a863977711d95ec904e8d697a47"
-  integrity sha512-J40VZFNf9Mun485ex1eVeU0Cmm9de2hCeMv0QFOSiecggiswlPAOCTDRDC8X4Q2jrJUajqeigFANObMKTV/WfA==
+"@kenjiuno/msgreader@^1.22.0-beta4":
+  version "1.22.0-beta4"
+  resolved "https://registry.yarnpkg.com/@kenjiuno/msgreader/-/msgreader-1.22.0-beta4.tgz#5ea3d57ccd5b9507c9525975d6b5838387e8d2f6"
+  integrity sha512-SjEfxk00lvvBgWfrLgkZXluHubmKhcKnFIj7oN/hiRgibIT71J0T1S7dopXE7i1i3NS84VMzatonGbXomT5DPw==
   dependencies:
     "@kenjiuno/decompressrtf" "^0.1.3"
     iconv-lite "^0.6.3"
